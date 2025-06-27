@@ -1,0 +1,489 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f1b;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Navbar */
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to right, #111, #222);
+  color: white;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  box-shadow: 0 3px 10px rgba(255, 165, 0, 0.2);
+}
+
+/* Logo Styling */
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.logo-primary {
+  color: white;
+}
+
+.logo-accent {
+  color: orange;
+}
+
+.logo-dot {
+  color: #ff6a00;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-left: 3px;
+  animation: pulse 2s infinite;
+}
+
+/* Subtle hover animation */
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Dot pulse animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.3);
+  }
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 8px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: orange;
+  transition: width 0.3s;
+}
+
+.nav-links li a:hover {
+  color: orange;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Add space below navbar */
+body {
+  scroll-behavior: smooth;
+  padding-top: 80px; /* To prevent content hiding behind navbar */
+}
+
+/* Sections */
+.section {
+  padding: 80px 10%;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #1c1c2d, #161625);
+}
+.hero-left h1 {
+  font-size: 3rem;
+}
+.hero-left h1 span {
+  color: orange;
+}
+.hero-left h3 {
+  margin-top: 10px;
+  font-weight: 400;
+  color: #aaa;
+}
+.hero-left p {
+  margin-top: 10px;
+  color: #ccc;
+}
+blockquote {
+  margin: 20px 0;
+  color: #ffcc80;
+  font-style: italic;
+}
+.hero-left button {
+  background: orange;
+  border: none;
+  color: black;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+.hero-left button:hover {
+  transform: scale(1.05);
+  background: #ff9800;
+}
+.hero-right img {
+  width: 300px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Section Headings */
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: orange;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 25px;
+}
+.skill {
+  background: #1e1e2f;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.2);
+}
+.skill:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+}
+.skill img {
+  width: 48px;
+  margin-bottom: 10px;
+}
+
+/* Projects */
+./* Project Section Enhancements */
+/* Horizontal Scroll Projects */
+.projects-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.project.card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background: #1c1c2d;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.project.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: orange;
+  box-shadow: 0 0 25px rgba(255, 165, 0, 0.4);
+}
+
+.project.card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.project.card:hover img {
+  transform: scale(1.1);
+}
+
+.project.card h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.project.card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.project.card a {
+  background: orange;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.project.card a:hover {
+  background: #ffa726;
+  transform: scale(1.05);
+}
+
+/* Optional: hide scrollbar on webkit browsers */
+.projects-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.projects-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #ff9800;
+  border-radius: 5px;
+}
+
+
+/* Certificates */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+.cert-card {
+  background: #1e1e2f;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+.cert-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+}
+.cert-card button {
+  background: orange;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.cert-card button:hover {
+  background: #ffa726;
+}
+/* Certificate Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-content {
+  max-width: 80%;
+  max-height: 80%;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+
+.download-btn {
+  margin-top: 20px;
+  background: orange;
+  color: black;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: #ffa500;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Contact */
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  padding-top: 60px;
+}
+
+.contact-subtext {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 165, 0, 0.2);
+  border-radius: 15px;
+  padding: 10px 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.contact-card img {
+  width: 40px;
+  margin-bottom: 10px;
+  transition: 0.3s ease;
+}
+
+.contact-card span {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.contact-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 165, 0, 0.1);
+  border-color: orange;
+}
+
+.contact-card:hover img {
+  transform: rotate(8deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-right {
+    margin-top: 30px;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+.typing-text {
+  color: orange;
+  font-weight: bold;
+  font-size: 1.5rem;
+  min-height: 40px;
+}
+.resume-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: orange;
+  color: black;
+  font-weight: 600;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: #ffa500;
+  transform: scale(1.05);
+}
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid orange;
+  margin-top: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -20px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: orange;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.timeline-content h4 {
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.timeline-content p {
+  margin: 5px 0 0;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
